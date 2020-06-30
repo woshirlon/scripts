@@ -8,6 +8,7 @@ if (this.$request && this.$request.headers && this.$request.body) {
   const VAL_signbody = this.$request.body
   if (VAL_signheader) chavy.setdata(VAL_signheader, KEY_signheader)
   if (VAL_signbody) chavy.setdata(VAL_signbody, KEY_signbody)
+  chavy.setdata(`修改为自己手机号`, KEY_mobile )
   chavy.msg(cookieName, `获取Cookie: 成功`, ``)
 }
 
