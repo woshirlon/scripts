@@ -9,7 +9,7 @@ sign()
 
 function sign() {
   if (bodyVal) {
-    let url = { url: `https://c.m.163.com/uc/api/sign/v2/commit`, headers: cookieVal }
+    let url = { url: `https://b-c.m.163.com/uc/api/sign/v2/commit`, headers: cookieVal }
     url.body = bodyVal
     chavy.post(url, (error, response, data) => {
       chavy.log(`${cookieName}, data: ${data}`)
