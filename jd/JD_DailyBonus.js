@@ -750,14 +750,15 @@ function JDGroceryStore(s) {
       };
 	  
 	  Getsignbody('https://pro.m.jd.com/mall/active/3S28janPLYmtFxypu37AYAGgivfp/index.html',function(enActK){
-	   if (enActK == "undefined")
+	  if (enActK == "undefined")
       {
           merge.JDGStore.notify = "京东商城-超市: 获取body失败 ‼️‼️"
           merge.JDGStore.fail = 1
       }  else
       {
-         JDSDUrl.body = "%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22" + enActK + "%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200294039_37206429_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22hEr1TO1FjXgaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22riskParam%22%3A%7B%22platform%22%3A%223%22%2C%22orgType%22%3A%222%22%2C%22openId%22%3A%22-1%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22eid%22%3A%22KLAZV3VLA44LYG7H3DDBQOIP4QHT5RKZNZHW3VMPNMMK2EV5JQTJPOCXYFJQIJ7QK7YX7EIP3YOENKOSIKYLK5TDXQ%22%2C%22fp%22%3A%226ac815a9da4b74d00e859782b86391ec%22%2C%22shshshfp%22%3A%221f65983b416a367aafd8b79387d4ebb6%22%2C%22shshshfpa%22%3A%2207158aca-73cf-318b-c731-1428a3453677-1593044801%22%2C%22shshshfpb%22%3A%22pYbU62avHFvpNOIrbqmo99g%3D%3D%22%2C%22childActivityUrl%22%3A%22https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2FaNCM6yrzD6qp1Vvh5YTzeJtk7cM%2Findex.html%22%7D%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%2C%22addressId%22%3A%22%22%2C%22posLng%22%3A%22%22%2C%22posLat%22%3A%22%22%2C%22focus%22%3A%22%22%2C%22innerAnchor%22%3A%22%22%2C%22cv%22%3A%222.0%22%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=15930447995411038373231&area="
-	     //console.log("\n" + "body:" + JDSDUrl.body);
+         JDSDUrl.body = "body=%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22" + enActK + "%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200124860_37969962_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22lHKyVOs4tWsaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22riskParam%22%3A%7B%22platform%22%3A%223%22%2C%22orgType%22%3A%222%22%2C%22openId%22%3A%22-1%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22eid%22%3A%22KLAZV3VLA44LYG7H3DDBQOIP4QHT5RKZNZHW3VMPNMMK2EV5JQTJPOCXYFJQIJ7QK7YX7EIP3YOENKOSIKYLK5TDXQ%22%2C%22fp%22%3A%226ac815a9da4b74d00e859782b86391ec%22%2C%22shshshfp%22%3A%221f65983b416a367aafd8b79387d4ebb6%22%2C%22shshshfpa%22%3A%2207158aca-73cf-318b-c731-1428a3453677-1593044801%22%2C%22shshshfpb%22%3A%22pYbU62avHFvpNOIrbqmo99g%3D%3D%22%2C%22childActivityUrl%22%3A%22https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2F3S28janPLYmtFxypu37AYAGgivfp%2Findex.html%22%7D%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%2C%22addressId%22%3A%22%22%2C%22posLng%22%3A%22%22%2C%22posLat%22%3A%22%22%2C%22focus%22%3A%22%22%2C%22innerAnchor%22%3A%22%22%2C%22cv%22%3A%222.0%22%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=15930447995411038373231&area="
+      
+	     console.log("\n" + "body:" + JDSDUrl.body);
 	  }  
       $nobyda.post(JDGSUrl, function(error, response, data) {
         try {
@@ -805,7 +806,7 @@ function JDGroceryStore(s) {
           resolve()
         }
       })
-	)}
+	  });
     }, s)
     if (out) setTimeout(resolve, out + s)
   });
@@ -1135,7 +1136,7 @@ function JDSecondhand(s) {
         body: "body=%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%229wKIMMJjQLbQFeZ6KQv0JRQuvrekjNWBHq5yWQKMup94QBKDKesTcH7ksLGiyVVTcRRfojzJNzLK%5C%5CnbjwQa59W4Y2YphqBdAM4A7c%2FO8RsVboARjh38I2yLerjWHgTMd2lGmbP5%2BHKCzc%3D%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200124860_37969962_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22lHKyVOs4tWsaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22riskParam%22%3A%7B%22platform%22%3A%223%22%2C%22orgType%22%3A%222%22%2C%22openId%22%3A%22-1%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22eid%22%3A%22KLAZV3VLA44LYG7H3DDBQOIP4QHT5RKZNZHW3VMPNMMK2EV5JQTJPOCXYFJQIJ7QK7YX7EIP3YOENKOSIKYLK5TDXQ%22%2C%22fp%22%3A%226ac815a9da4b74d00e859782b86391ec%22%2C%22shshshfp%22%3A%221f65983b416a367aafd8b79387d4ebb6%22%2C%22shshshfpa%22%3A%2207158aca-73cf-318b-c731-1428a3453677-1593044801%22%2C%22shshshfpb%22%3A%22pYbU62avHFvpNOIrbqmo99g%3D%3D%22%2C%22childActivityUrl%22%3A%22https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2F3S28janPLYmtFxypu37AYAGgivfp%2Findex.html%22%7D%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%2C%22addressId%22%3A%22%22%2C%22posLng%22%3A%22%22%2C%22posLat%22%3A%22%22%2C%22focus%22%3A%22%22%2C%22innerAnchor%22%3A%22%22%2C%22cv%22%3A%222.0%22%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=15930447995411038373231&area="
       };
        
-	  //console.log("\n" + "开始调用Getsignbody"); 
+	  console.log("\n" + "开始调用Getsignbody"); 
       Getsignbody('https://pro.m.jd.com/mall/active/3S28janPLYmtFxypu37AYAGgivfp/index.html',function(enActK){
 	  //console.log("\n" + "结束调用Getsignbody"); 
 	  //console.log("\n" + "URI:" + enActK);
@@ -1147,7 +1148,7 @@ function JDSecondhand(s) {
       {
          JDSDUrl.body = "body=%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22" + enActK + "%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200124860_37969962_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22lHKyVOs4tWsaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22riskParam%22%3A%7B%22platform%22%3A%223%22%2C%22orgType%22%3A%222%22%2C%22openId%22%3A%22-1%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22eid%22%3A%22KLAZV3VLA44LYG7H3DDBQOIP4QHT5RKZNZHW3VMPNMMK2EV5JQTJPOCXYFJQIJ7QK7YX7EIP3YOENKOSIKYLK5TDXQ%22%2C%22fp%22%3A%226ac815a9da4b74d00e859782b86391ec%22%2C%22shshshfp%22%3A%221f65983b416a367aafd8b79387d4ebb6%22%2C%22shshshfpa%22%3A%2207158aca-73cf-318b-c731-1428a3453677-1593044801%22%2C%22shshshfpb%22%3A%22pYbU62avHFvpNOIrbqmo99g%3D%3D%22%2C%22childActivityUrl%22%3A%22https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2F3S28janPLYmtFxypu37AYAGgivfp%2Findex.html%22%7D%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%2C%22addressId%22%3A%22%22%2C%22posLng%22%3A%22%22%2C%22posLat%22%3A%22%22%2C%22focus%22%3A%22%22%2C%22innerAnchor%22%3A%22%22%2C%22cv%22%3A%222.0%22%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=15930447995411038373231&area="
       
-	     //console.log("\n" + "body:" + JDSDUrl.body);
+	     console.log("\n" + "body:" + JDSDUrl.body);
 	  }  
       $nobyda.post(JDSDUrl, function(error, response, data) {
         try {
@@ -2905,7 +2906,7 @@ function Getsignbody(URL, callback)
           Cookie: KEY,
         }
       };
-	  //console.log("\n" + "开始进入Getsignbody"); 
+	  console.log("\n" + "开始进入Getsignbody"); 
       $nobyda.get(JDUrl, function(error, response, data) {
       try {
         if (!error) 
@@ -2918,8 +2919,8 @@ function Getsignbody(URL, callback)
 		    callback ("undefined");
 		 } else
 		 {
-			 //console.log("\n"+"enActKURI：" + urlencode(enActK));
-			 //console.log("\n" + "结束Getsignbody"); 
+			 console.log("\n"+"enActKURI：" + urlencode(enActK));
+			 console.log("\n" + "结束Getsignbody"); 
 			 callback (urlencode(enActK));
 		 }
 			
