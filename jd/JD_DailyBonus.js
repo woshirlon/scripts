@@ -2856,6 +2856,14 @@ function GetCookie() {
   $nobyda.done()
 }
 // Modified from yichahucha
+
+function urlencode (str) {  
+    str = (str + '').toString();   
+
+    return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').  
+    replace(/\)/g, '%29').replace(/\*/g, '%2A').replace(/%20/g, '+');  
+}
+
 function nobyda() {
   const start = Date.now()
   const isRequest = typeof $request != "undefined"
