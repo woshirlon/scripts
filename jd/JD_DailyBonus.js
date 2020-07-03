@@ -758,7 +758,7 @@ function JDGroceryStore(s) {
           merge.JDGStore.fail = 1
       }  else
       {
-         JDSDUrl.body = "body=%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22" + enActK + "%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200294039_37206429_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22hEr1TO1FjXgaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22riskParam%22%3A%7B%22platform%22%3A%223%22%2C%22orgType%22%3A%222%22%2C%22openId%22%3A%22-1%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22eid%22%3A%22KLAZV3VLA44LYG7H3DDBQOIP4QHT5RKZNZHW3VMPNMMK2EV5JQTJPOCXYFJQIJ7QK7YX7EIP3YOENKOSIKYLK5TDXQ%22%2C%22fp%22%3A%226ac815a9da4b74d00e859782b86391ec%22%2C%22shshshfp%22%3A%221f65983b416a367aafd8b79387d4ebb6%22%2C%22shshshfpa%22%3A%2207158aca-73cf-318b-c731-1428a3453677-1593044801%22%2C%22shshshfpb%22%3A%22pYbU62avHFvpNOIrbqmo99g%3D%3D%22%2C%22childActivityUrl%22%3A%22https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2FaNCM6yrzD6qp1Vvh5YTzeJtk7cM%2Findex.html%22%7D%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%2C%22addressId%22%3A%22%22%2C%22posLng%22%3A%22%22%2C%22posLat%22%3A%22%22%2C%22focus%22%3A%22%22%2C%22innerAnchor%22%3A%22%22%2C%22cv%22%3A%222.0%22%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=15930447995411038373231&area="
+         JDGSUrl.body = "body=%7B%22params%22%3A%22%7B%5C%22enActK%5C%22%3A%5C%22" + enActK + "%5C%22%2C%5C%22isFloatLayer%5C%22%3Afalse%2C%5C%22ruleSrv%5C%22%3A%5C%2200294039_37206429_t1%5C%22%2C%5C%22signId%5C%22%3A%5C%22hEr1TO1FjXgaZs%2Fn4coLNw%3D%3D%5C%22%7D%22%2C%22riskParam%22%3A%7B%22platform%22%3A%223%22%2C%22orgType%22%3A%222%22%2C%22openId%22%3A%22-1%22%2C%22pageClickKey%22%3A%22Babel_Sign%22%2C%22eid%22%3A%22KLAZV3VLA44LYG7H3DDBQOIP4QHT5RKZNZHW3VMPNMMK2EV5JQTJPOCXYFJQIJ7QK7YX7EIP3YOENKOSIKYLK5TDXQ%22%2C%22fp%22%3A%226ac815a9da4b74d00e859782b86391ec%22%2C%22shshshfp%22%3A%221f65983b416a367aafd8b79387d4ebb6%22%2C%22shshshfpa%22%3A%2207158aca-73cf-318b-c731-1428a3453677-1593044801%22%2C%22shshshfpb%22%3A%22pYbU62avHFvpNOIrbqmo99g%3D%3D%22%2C%22childActivityUrl%22%3A%22https%3A%2F%2Fpro.m.jd.com%2Fmall%2Factive%2FaNCM6yrzD6qp1Vvh5YTzeJtk7cM%2Findex.html%22%7D%2C%22mitemAddrId%22%3A%22%22%2C%22geo%22%3A%7B%22lng%22%3A%22%22%2C%22lat%22%3A%22%22%7D%2C%22addressId%22%3A%22%22%2C%22posLng%22%3A%22%22%2C%22posLat%22%3A%22%22%2C%22focus%22%3A%22%22%2C%22innerAnchor%22%3A%22%22%2C%22cv%22%3A%222.0%22%7D&screen=750*1334&client=wh5&clientVersion=1.0.0&sid=&uuid=15930447995411038373231&area="
        //  console.log("\n" + "body:" + JDSDUrl.body);
 	  }  
 	  
@@ -2891,7 +2891,7 @@ function GetCookie() {
 function urlencode (str) {  
     str = (str + '').toString();   
 	
-	console.log("\n" + "encodeURI" + encodeURIComponent(str));
+	//console.log("\n" + "encodeURI" + encodeURIComponent(str));
 
     return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').  
     replace(/\)/g, '%29').replace(/\*/g, '%2A').replace(/%20/g, '+');  
