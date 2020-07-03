@@ -2889,8 +2889,15 @@ function Getsignbody(URL)
       try {
         if (!error) 
 		{
-            let enActK = response.match(/enActK\\":\\"(.+?)(?=\\")/)[1]);
-			return urlencode(enActK);
+            let enActK = data.match(/enActK\\":\\"(.+?)(?=\\")/)[1]);
+                 if (enActK == '')
+		 {
+		    return enActK;
+		 } else
+		 {
+			 return urlencode(enActK);
+		 }
+			
         } else 
 		{
           console.log("\n" + "京东-获取签到body失败")
