@@ -2895,7 +2895,7 @@ function Getsignbody(URL)
 		    return enActK;
 		 } else
 		 {
-			 return urlencode(enActK);
+			 return new urlencode(enActK);
 		 }
 			
         } else 
