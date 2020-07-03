@@ -2,7 +2,7 @@
 
 京东多合一签到脚本
 
-更新时间: 2020.7.3 17:40 v1.18
+更新时间: 2020.6.26 17:40 v1.17
 有效接口: 27+
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 电报频道: @NobyDa 
@@ -805,7 +805,7 @@ function JDGroceryStore(s) {
           resolve()
         }
       })
-	}
+	)}
     }, s)
     if (out) setTimeout(resolve, out + s)
   });
