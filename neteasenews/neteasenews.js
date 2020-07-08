@@ -26,7 +26,7 @@ function sign() {
         subTitle = '签到结果: 失败'
         detail = `编码: ${result.code}, 说明: ${result.msg}`
       }
-     // chavy.log(`${cookieName}${subTitle},${detail}`)
+      chavy.log(`${cookieName}${subTitle},${detail}`)
       chavy.msg(title, subTitle, detail)
     })
   } else {
@@ -34,9 +34,9 @@ function sign() {
     let subTitle = `签到结果: 失败`
     let detail = `说明: body参数为空`
     if (isQuanX()) detail += `, QuanX用户请手动抓包 body 参数!`
+    chavy.log(`${cookieName}${subTitle},${detail}`)
     chavy.msg(title, subTitle, detail)
   }
-  chavy.log(`${cookieName}${subTitle},${detail}`)
   chavy.done()
 }
 
