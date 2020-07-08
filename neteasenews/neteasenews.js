@@ -12,7 +12,6 @@ function sign() {
     let url = { url: `https://c.m.163.com/uc/api/sign/v2/commit`, headers: cookieVal }
     url.body = bodyVal
     chavy.post(url, (error, response, data) => {
-      chavy.log(`${cookieName}, data: ${data}`)
       let result = JSON.parse(data)
       const title = `${cookieName}`
       let subTitle = ``
@@ -27,6 +26,7 @@ function sign() {
         subTitle = '签到结果: 失败'
         detail = `编码: ${result.code}, 说明: ${result.msg}`
       }
+     // chavy.log(`${cookieName}${subTitle},${detail}`)
       chavy.msg(title, subTitle, detail)
     })
   } else {
@@ -36,7 +36,7 @@ function sign() {
     if (isQuanX()) detail += `, QuanX用户请手动抓包 body 参数!`
     chavy.msg(title, subTitle, detail)
   }
-
+  chavy.log(`${cookieName}${subTitle},${detail}`)
   chavy.done()
 }
 
