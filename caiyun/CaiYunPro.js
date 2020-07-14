@@ -2,7 +2,7 @@
 彩云天气PRO  SVIP
 QX
 [rewrite_local]
-https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name=weather url script-response-header CaiYunPro.js
+https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name=weather url script-response-body CaiYunPro.js
 [mitm]
 hostname = biz.caiyunapp.com
 */
