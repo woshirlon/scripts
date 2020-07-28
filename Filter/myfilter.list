@@ -1,4 +1,15 @@
 #自用分流列表
+# 域名 PROXY
 DOMAIN-SUFFIX,lncn.org,PROXY
 
+# 域名 REJECT
+
+# 域名 DIRECT
+
+
+#IP PROXY
 IP-CIDR,8.8.8.8/32,PROXY
+
+#IP REJECT
+
+#IP DIRECT
