@@ -1,0 +1,4 @@
+#自用分流列表
+DOMAIN-SUFFIX,lncn.org,PROXY
+
+IP-CIDR,8.8.8.8/32,PROXY
