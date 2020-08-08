@@ -6,7 +6,7 @@ DOMAIN-SUFFIX,lncn.org,PROXY
 DOMAIN-SUFFIX,bds.snssdk.com,REJECT
 DOMAIN-SUFFIX,extlog.snssdk.com,REJECT
 DOMAIN-SUFFIX,toblog.ctobsnssdk.com,REJECT
-
+DOMAIN-SUFFIX,pstatp.com,REJECT
 
 # 域名 DIRECT
 
