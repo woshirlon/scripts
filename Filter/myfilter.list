@@ -5,12 +5,14 @@ DOMAIN-SUFFIX,lncn.org,PROXY
 # 域名 REJECT
 DOMAIN-SUFFIX,bds.snssdk.com,REJECT
 DOMAIN-SUFFIX,smr.snssdk.com,REJECT
+DOMAIN-SUFFIX,pangolin.snssdk.com,REJECT
 DOMAIN-SUFFIX,extlog.snssdk.com,REJECT
 DOMAIN-SUFFIX,toblog.ctobsnssdk.com,REJECT
 DOMAIN-SUFFIX,pangolin.ctobsnssdk.com,REJECT
-DOMAIN-SUFFIX,pangolin.ctobsnssdk.com,REJECT
 DOMAIN-SUFFIX,pstatp.com,REJECT
 DOMAIN-SUFFIX,devfu.cc,REJECT
+DOMAIN-SUFFIX,qzs.qq.com,REJECT
+DOMAIN-SUFFIX,ulogs.umeng.com,REJECT
 
 # 域名 DIRECT
 
