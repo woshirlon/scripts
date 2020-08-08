@@ -3,6 +3,10 @@
 DOMAIN-SUFFIX,lncn.org,PROXY
 
 # 域名 REJECT
+DOMAIN-SUFFIX,bds.snssdk.com,REJECT
+DOMAIN-SUFFIX,extlog.snssdk.com,REJECT
+DOMAIN-SUFFIX,toblog.ctobsnssdk.com,REJECT
+
 
 # 域名 DIRECT
 
