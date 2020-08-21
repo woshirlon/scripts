@@ -105,6 +105,7 @@ function smtg_receiveCoin(timeout = 0) {
           'Accept-Language' : `zh-cn`
         }
       }
+      if (!timeout) index = 0;
       $.get(url, async (err, resp, data) => {
         try {
           data = JSON.parse(data);
@@ -115,7 +116,7 @@ function smtg_receiveCoin(timeout = 0) {
           }
           if (data.data.bizCode === 0) {
             merge.blueCoin.success++;
-            merge.blueCoin.prizecount += data.data.result.receivedBlue;
+            merge.blueCoin.prizeCount += data.data.result.receivedBlue;
             index ++;
             console.log(`【京东账号】${merge.nickname} 第${index}次领蓝币成功，获得${data.data.result.receivedBlue}个\n`)
             if (!data.data.result.isNextReceived) return;
@@ -189,19 +190,19 @@ function initial() {
     merge[i].notify = "";
     merge[i].show = true;
   }
-  if (!coinToBeans) merge.jdBeans.show = false;
+  merge.jdBeans.show =Boolean(coinToBeans);
 }
 //通知
 function msgShow() {
   let message = "";
-  message = `京东账号：${merge.nickname}\n`;
+  let title = `京东账号：${merge.nickname}`;
   for (let i in merge) {
     if (typeof (merge[i]) !== "object" || !merge[i].show) continue;
     if (merge[i].notify.split("").reverse()[0] === "\n") merge[i].notify = merge[i].notify.substr(0,merge[i].notify.length - 1);
-    message += `${merge[i].prizeDesc.split(STRSPLIT)[0]}${merge[i].prizeDesc.split(STRSPLIT)[1]}：` + (merge[i].success ? `${merge[i].prizeCount.toFixed(2)}${merge[i].prizeCount}${merge[i].prizeDesc.split(STRSPLIT)[2]}\n` : `失败：${merge[i].notify}\n`)
+    message += `${merge[i].prizeDesc.split(STRSPLIT)[0]}${merge[i].prizeDesc.split(STRSPLIT)[1]}：` + (merge[i].success ? `${merge[i].prizeCount.toFixed(2)}${merge[i].prizeDesc.split(STRSPLIT)[2]}\n` : `失败：${merge[i].notify}\n`)
   }
 //合计
- if (needSum)
+if (needSum)
   {
     $.sum = {};
     for (let i in merge) {
@@ -210,13 +211,13 @@ function msgShow() {
          $.sum[merge[i].prizeDesc.split(STRSPLIT)[1]].count += merge[i].prizeCount;
     }
     message += `合计：`
-    for (let  i in $.sum)
+    for (let i in $.sum)
     {
-      message += `${$.sum[i].count.toFixed(2)}${i},`
+      message += `${$.sum[i].count.toFixed(2)}${i}，`
     }
   }
   message = message.substr(0,message.length - 1);
-  $.msg($.name, ``,message);
+  $.msg($.name, title, message);
 }
 
 
