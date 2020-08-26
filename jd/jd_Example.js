@@ -49,7 +49,7 @@ const JD_API_HOST = `https://api.m.jd.com/api?appid=jdsupermarket`;
       }
       await smtg_receiveCoin();
       if (coinToBeans) {
-        await smtg_obtainPrize();
+        await smtg_queryPrize();
       }
       await msgShow();
     }
@@ -131,13 +131,56 @@ function smtg_receiveCoin(timeout = 0) {
     },timeout)
   })
 }
-
-//换京豆
-function smtg_obtainPrize(timeout = 0) {
+//查询任务
+function smtg_queryPrize(timeout = 0){
   return new Promise((resolve) => {
     setTimeout( ()=>{
       let url = {
-        url : `${JD_API_HOST}&functionId=smtg_obtainPrize&clientVersion=8.0.0&client=m&body=%7B%22prizeId%22:%224401379725%22%7D&t=${Date.now()}`,
+        url : `${JD_API_HOST}&functionId=smtg_queryPrize&clientVersion=8.0.0&client=m&body=%7B%7D&t=${Date.now()}`,
+        headers : {
+          'Origin' : `https://jdsupermarket.jd.com`,
+          'Cookie' : cookie,
+          'Connection' : `keep-alive`,
+          'Accept' : `application/json, text/plain, */*`,
+          'Referer' : `https://jdsupermarket.jd.com/game/?tt=1597540727225`,
+          'Host' : `api.m.jd.com`,
+          'Accept-Encoding' : `gzip, deflate, br`,
+          'Accept-Language' : `zh-cn`
+        }
+      }
+      $.post(url, async (err, resp, data) => {
+        try {
+          data = JSON.parse(data);
+          if (data.data.bizCode !== 0) {
+            merge.jdBeans.fail++;
+            merge.jdBeans.notify = `${data.data.bizMsg}`;
+            return
+          }
+          if (data.data.bizCode === 0) {
+            console.log(`【京东账号】${merge.nickname} 查询换京豆ID成功，ID:${data.data.result.prizeList[0].prizeId}`)
+            if (data.data.result.prizeList[0].targetNum === data.data.result.prizeList[0].finishNum) {
+              merge.jdBeans.fail++;
+              merge.jdBeans.notify = `${data.data.result.prizeList[0].subTitle}`;
+              return ;
+            }
+          }
+          await  smtg_obtainPrize(data.data.result.prizeList[0].prizeId,1000);
+        } catch (e) {
+          $.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+      })
+    },timeout)
+  })
+}
+
+//换京豆
+function smtg_obtainPrize(prizeId,timeout = 0) {
+  return new Promise((resolve) => {
+    setTimeout( ()=>{
+      let url = {
+        url : `${JD_API_HOST}&functionId=smtg_obtainPrize&clientVersion=8.0.0&client=m&body=%7B%22prizeId%22:%22${prizeId}%22%7D&t=${Date.now()}`,
         headers : {
           'Origin' : `https://jdsupermarket.jd.com`,
           'Cookie' : cookie,
@@ -180,8 +223,8 @@ function initial() {
   merge = {
     nickname: "",
     enabled: true,
-    blueCoin: {prizeDesc : "收取|蓝币|个"},  //定义 动作|奖励名称|奖励单位
-    jdBeans: {prizeDesc : "兑换|京豆|个"}
+    blueCoin: {prizeDesc : "收取|蓝币|个",number : true},  //定义 动作|奖励名称|奖励单位   是否是数字
+    jdBeans: {prizeDesc : "兑换|京豆|个",number : true}
   }
   for (let i in merge) {
     merge[i].success = 0;
