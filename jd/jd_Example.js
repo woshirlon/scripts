@@ -206,7 +206,7 @@ function smtg_obtainPrize(prizeId,timeout = 0) {
             console.log(`【京东账号】${merge.nickname} 第${data.data.result.exchangeNum}次换京豆成功`)
             if (data.data.result.exchangeNum === 20 || merge.jdBeans.prizeCount == coinToBeans || data.data.result.blur < 500) return;
           }
-          await  smtg_obtainPrize(1000);
+          await  smtg_obtainPrize(prizeId,1000);
         } catch (e) {
           $.logErr(e, resp);
         } finally {
