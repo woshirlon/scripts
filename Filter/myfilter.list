@@ -1,6 +1,7 @@
 #自用分流列表
 # 域名 PROXY
 DOMAIN-SUFFIX,lncn.org,PROXY
+DOMAIN-KEYWORD,github,PROXY
 
 # 域名 REJECT
 DOMAIN-SUFFIX,bds.snssdk.com,REJECT
