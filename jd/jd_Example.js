@@ -1,6 +1,6 @@
 /*
 京东example
-更新时间：2020-08-20
+更新时间：2020-08-29
 脚本说明：
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 // quantumultx
@@ -238,7 +238,7 @@ function initial() {
 //通知
 function msgShow() {
   let message = "";
-  let url ={openurl : `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://jdsupermarket.jd.com/loading%22%20%7D`}
+  let url ={ "open-url" : `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://jdsupermarket.jd.com/loading%22%20%7D`}
   let title = `京东账号：${merge.nickname}`;
   for (let i in merge) {
     if (typeof (merge[i]) !== "object" || !merge[i].show) continue;
