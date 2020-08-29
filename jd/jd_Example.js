@@ -6,12 +6,12 @@
 // quantumultx
 [task_local]
 #京东example
-11 5 * * * https://raw.githubusercontent.com/lxk0301/scripts/master/jd_Example.js, tag=京东example, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxc.png, enabled=true
+11 5 * * * https://raw.githubusercontent.com/yangtingxiao/scripts/master/jd/jd_Example.js, tag=京东example, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxc.png, enabled=true
 // Loon
 [Script]
-cron "11 5 * * *" script-path=https://raw.githubusercontent.com/lxk0301/scripts/master/jd_Example.js,tag=京东example
+cron "11 5 * * *" script-path=https://raw.githubusercontent.com/yangtingxiao/scripts/master/jd/jd_Example.js,tag=京东example
 // Surge
-京东example = type=cron,cronexp=11 5 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/lxk0301/scripts/master/jd_Example.js
+京东example = type=cron,cronexp=11 5 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/yangtingxiao/scripts/master/jd/jd_Example.js
  */
 const $ = new Env('京东example');
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -238,6 +238,7 @@ function initial() {
 //通知
 function msgShow() {
   let message = "";
+  let url ={openurl : `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://jdsupermarket.jd.com/loading%22%20%7D`}
   let title = `京东账号：${merge.nickname}`;
   for (let i in merge) {
     if (typeof (merge[i]) !== "object" || !merge[i].show) continue;
@@ -260,7 +261,7 @@ if (needSum)
     }
   }
   message = message.substr(0,message.length - 1);
-  $.msg($.name, title, message);
+  $.msg($.name, title, message, url);
 }
 
 
