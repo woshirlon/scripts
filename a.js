@@ -32,10 +32,9 @@ let vender=''
 let num=0
 let shopname=''
 const token = [
-  'd64a2e1883114bd9bc9a5056e8e55f92',//每天20
-    '3b1dbc78f3a24ea991dc60d1c03d4e2e',//每天20
-    'bbf92951cbd9400193764f7b7136ee90',//每天20
-    'f32a376982d34927aebfc36be4d920f7',//每天20
+  'D30461CEEF76DC5A8E9E6BA858C5246C',//每天20
+    '735E77094751DBE3414AAD798BA25307',//每天20
+    '0F3C996084A61F3922DCEC66586A2B1F',//每天20
 ]
 
 if ($.isNode()) {
